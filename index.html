@@ -34,6 +34,9 @@
       <ul>
 
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#connectors">Connectors</a></li>
+        <li><a href="#ideas">Ideas</a></li>
+        <li><a href="#students">Students</a></li>
         <li><a href="#collab">Collaboration</a></li>
         <li><a href="#community">Community</a></li>
 
@@ -217,24 +220,47 @@
           Start Collaboration
         </h3>
 
-        <p>
+        <form id="collab-form" class="collab-form" novalidate>
 
-          Send your project idea,
-          research proposal,
-          collaboration request,
-          publication inquiry,
-          or innovation partnership directly.
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+            maxlength="120"
+          />
 
-        </p>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            required
+            maxlength="200"
+          />
 
-        <a
-          href="mailto:dr.jeevanasivagnanam@gmail.com?subject=Research Collaboration with Dr. Jeevana Sivagnanam"
-          class="mail-btn"
-        >
+          <input
+            type="text"
+            name="area"
+            placeholder="Research area or discipline"
+            required
+            maxlength="100"
+          />
 
-          SEND EMAIL
+          <textarea
+            name="message"
+            placeholder="Describe your project idea, proposal, or collaboration interest..."
+            required
+            maxlength="2000"
+            rows="4"
+          ></textarea>
 
-        </a>
+          <button type="submit" class="mail-btn" id="collab-submit">
+            SEND REQUEST
+          </button>
+
+          <p id="collab-status" class="collab-status"></p>
+
+        </form>
 
       </div>
 
@@ -250,7 +276,265 @@
       GLOBAL RESEARCH & COLLABORATION FEED
     </h3>
 
-    <div class="feed-grid"></div>
+    <form id="feed-form" class="feed-post-form">
+      <input type="text" id="feed-author" placeholder="Your name" maxlength="100" required />
+      <input type="text" id="feed-field" placeholder="Field / discipline" maxlength="80" required />
+      <textarea id="feed-content" placeholder="Share an update, insight, or collaboration call..." maxlength="500" rows="2" required></textarea>
+      <button type="submit" class="feed-post-btn">POST TO FEED</button>
+    </form>
+
+    <div class="feed-grid" id="feed-grid">
+      <p class="feed-loading">Loading feed...</p>
+    </div>
+
+  </section>
+
+  <!-- CONNECTORS -->
+
+  <section id="connectors" class="connectors">
+
+    <h3>BUILD INSIDE CONNECTORS</h3>
+
+    <p class="section-sub">
+      Domain-specific innovation hubs where researchers,
+      students, and builders connect to create meaningful systems.
+    </p>
+
+    <div class="connector-grid">
+
+      <div class="connector-card">
+        <div class="connector-icon">AI</div>
+        <h4>Artificial Intelligence</h4>
+        <p>Build intelligent systems, predictive models, and learning algorithms that transform how we understand data.</p>
+        <button class="connector-btn">Build Here</button>
+      </div>
+
+      <div class="connector-card">
+        <div class="connector-icon">BIO</div>
+        <h4>Biomedical Research</h4>
+        <p>Develop healthcare solutions, clinical tools, and life sciences platforms at the intersection of medicine and technology.</p>
+        <button class="connector-btn">Build Here</button>
+      </div>
+
+      <div class="connector-card">
+        <div class="connector-icon">ENG</div>
+        <h4>Engineering Systems</h4>
+        <p>Design infrastructure, hardware, and complex engineering solutions for real-world challenges.</p>
+        <button class="connector-btn">Build Here</button>
+      </div>
+
+      <div class="connector-card">
+        <div class="connector-icon">EDU</div>
+        <h4>Education Technology</h4>
+        <p>Create adaptive learning platforms, curriculum frameworks, and educational ecosystems for the future of human development.</p>
+        <button class="connector-btn">Build Here</button>
+      </div>
+
+      <div class="connector-card">
+        <div class="connector-icon">PSY</div>
+        <h4>Psychology & Cognition</h4>
+        <p>Research human behavior, cognitive systems, and mental health technologies bridging science and real-world impact.</p>
+        <button class="connector-btn">Build Here</button>
+      </div>
+
+      <div class="connector-card">
+        <div class="connector-icon">INV</div>
+        <h4>Innovation & Strategy</h4>
+        <p>Build startups, innovation frameworks, and strategic research platforms that drive systemic change.</p>
+        <button class="connector-btn">Build Here</button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECT IDEAS -->
+
+  <section id="ideas" class="ideas">
+
+    <h3>OPEN PROJECT IDEAS</h3>
+
+    <p class="section-sub">
+      Interdisciplinary project concepts open for collaboration.
+      Pick an idea, form a team, and build something meaningful.
+    </p>
+
+    <div class="ideas-grid">
+
+      <div class="idea-card">
+        <div class="idea-tags">
+          <span class="idea-tag">AI</span>
+          <span class="idea-tag">Medicine</span>
+        </div>
+        <h4>AI-Powered Diagnostic Assistant</h4>
+        <p>Build an intelligent system for early disease detection using multimodal patient data — imaging, labs, and clinical notes unified through machine learning.</p>
+        <div class="idea-status">Open Collaboration</div>
+        <button class="idea-btn">Explore Idea</button>
+      </div>
+
+      <div class="idea-card">
+        <div class="idea-tags">
+          <span class="idea-tag">Data Science</span>
+          <span class="idea-tag">Research</span>
+        </div>
+        <h4>Open Knowledge Graph</h4>
+        <p>A collaborative semantic network connecting research papers across disciplines — making interdisciplinary discovery searchable and actionable.</p>
+        <div class="idea-status">Open Collaboration</div>
+        <button class="idea-btn">Explore Idea</button>
+      </div>
+
+      <div class="idea-card">
+        <div class="idea-tags">
+          <span class="idea-tag">Education</span>
+          <span class="idea-tag">Psychology</span>
+        </div>
+        <h4>Cognitive Learning Platform</h4>
+        <p>An adaptive learning system that responds to individual cognitive patterns — delivering personalized curricula based on how each learner actually thinks.</p>
+        <div class="idea-status">Open Collaboration</div>
+        <button class="idea-btn">Explore Idea</button>
+      </div>
+
+      <div class="idea-card">
+        <div class="idea-tags">
+          <span class="idea-tag">Environment</span>
+          <span class="idea-tag">Medicine</span>
+        </div>
+        <h4>Climate & Health Analytics</h4>
+        <p>A cross-disciplinary data platform linking environmental variables with health outcomes — building early-warning systems for climate-driven health crises.</p>
+        <div class="idea-status">Open Collaboration</div>
+        <button class="idea-btn">Explore Idea</button>
+      </div>
+
+      <div class="idea-card">
+        <div class="idea-tags">
+          <span class="idea-tag">AI</span>
+          <span class="idea-tag">Research</span>
+        </div>
+        <h4>Generative Research Synthesizer</h4>
+        <p>An AI tool that synthesizes literature reviews, surfaces contradictions across papers, and automatically identifies under-explored research gaps.</p>
+        <div class="idea-status">Open Collaboration</div>
+        <button class="idea-btn">Explore Idea</button>
+      </div>
+
+      <div class="idea-card">
+        <div class="idea-tags">
+          <span class="idea-tag">Ethics</span>
+          <span class="idea-tag">AI</span>
+        </div>
+        <h4>Bioethics Decision Framework</h4>
+        <p>A structured computational framework for ethical decision-making in medical AI — translating complex bioethical principles into evaluable system criteria.</p>
+        <div class="idea-status">Open Collaboration</div>
+        <button class="idea-btn">Explore Idea</button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STUDENTS -->
+
+  <section id="students" class="students">
+
+    <h3>STUDENTS READY TO COLLABORATE</h3>
+
+    <p class="section-sub">
+      Ambitious students across disciplines looking for
+      research partners, mentors, and co-builders.
+    </p>
+
+    <div class="students-grid">
+
+      <div class="student-card">
+        <div class="student-avatar">AP</div>
+        <div class="student-info">
+          <h4>Aiden Patel</h4>
+          <p class="student-field">Computer Science · Year 3</p>
+          <div class="student-skills">
+            <span>AI/ML</span>
+            <span>Python</span>
+            <span>Research</span>
+          </div>
+          <p class="student-bio">Building intelligent systems at the intersection of education and artificial intelligence. Seeking interdisciplinary research collaborators.</p>
+          <a href="mailto:drjeevanasivagnanam@gmail.com?subject=Student Collaboration - Aiden Patel" class="student-btn">Connect</a>
+        </div>
+      </div>
+
+      <div class="student-card">
+        <div class="student-avatar">SM</div>
+        <div class="student-info">
+          <h4>Sofia Marchetti</h4>
+          <p class="student-field">Pre-Medicine · Year 2</p>
+          <div class="student-skills">
+            <span>Biomedical</span>
+            <span>Clinical Research</span>
+            <span>Data</span>
+          </div>
+          <p class="student-bio">Passionate about translational medicine and healthcare innovation. Looking to join biomedical research projects with real-world clinical impact.</p>
+          <a href="mailto:drjeevanasivagnanam@gmail.com?subject=Student Collaboration - Sofia Marchetti" class="student-btn">Connect</a>
+        </div>
+      </div>
+
+      <div class="student-card">
+        <div class="student-avatar">MC</div>
+        <div class="student-info">
+          <h4>Marcus Chen</h4>
+          <p class="student-field">Mechanical Engineering · Year 4</p>
+          <div class="student-skills">
+            <span>Robotics</span>
+            <span>Systems Design</span>
+            <span>CAD</span>
+          </div>
+          <p class="student-bio">Designing complex mechanical and robotic systems with a focus on sustainable engineering. Interested in cross-disciplinary hardware-software projects.</p>
+          <a href="mailto:drjeevanasivagnanam@gmail.com?subject=Student Collaboration - Marcus Chen" class="student-btn">Connect</a>
+        </div>
+      </div>
+
+      <div class="student-card">
+        <div class="student-avatar">PN</div>
+        <div class="student-info">
+          <h4>Priya Nair</h4>
+          <p class="student-field">Psychology · Masters</p>
+          <div class="student-skills">
+            <span>Cognitive Science</span>
+            <span>Behavioral Research</span>
+            <span>Neuroscience</span>
+          </div>
+          <p class="student-bio">Researching cognitive patterns, memory systems, and human decision-making. Seeking collaborators bridging psychology with technology and education.</p>
+          <a href="mailto:drjeevanasivagnanam@gmail.com?subject=Student Collaboration - Priya Nair" class="student-btn">Connect</a>
+        </div>
+      </div>
+
+      <div class="student-card">
+        <div class="student-avatar">JO</div>
+        <div class="student-info">
+          <h4>James Okonkwo</h4>
+          <p class="student-field">Business & Innovation · Year 3</p>
+          <div class="student-skills">
+            <span>Strategy</span>
+            <span>Entrepreneurship</span>
+            <span>Systems Thinking</span>
+          </div>
+          <p class="student-bio">Building frameworks for social innovation and impact-driven entrepreneurship. Looking to co-create research on how organizations generate meaningful change.</p>
+          <a href="mailto:drjeevanasivagnanam@gmail.com?subject=Student Collaboration - James Okonkwo" class="student-btn">Connect</a>
+        </div>
+      </div>
+
+      <div class="student-card">
+        <div class="student-avatar">LV</div>
+        <div class="student-info">
+          <h4>Lena Volkov</h4>
+          <p class="student-field">Data Science · PhD Candidate</p>
+          <div class="student-skills">
+            <span>Bioinformatics</span>
+            <span>Computational Biology</span>
+            <span>Statistics</span>
+          </div>
+          <p class="student-bio">PhD candidate applying computational methods to biological data. Seeking interdisciplinary collaborations connecting data science with clinical and life sciences research.</p>
+          <a href="mailto:drjeevanasivagnanam@gmail.com?subject=Student Collaboration - Lena Volkov" class="student-btn">Connect</a>
+        </div>
+      </div>
+
+    </div>
 
   </section>
 
