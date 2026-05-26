@@ -30,63 +30,145 @@ projectButtons.forEach((button) => {
 
 });
 
-// COMMUNITY POSTS
+// CONNECTOR BUTTONS
 
-const communityData = [
+const connectorButtons =
+document.querySelectorAll(".connector-btn");
 
-  {
-    title: "Biomedical Research Collaboration",
-    description:
-      "Seeking interdisciplinary collaborators for healthcare innovation and translational research systems."
-  },
+connectorButtons.forEach((button) => {
 
-  {
-    title: "Engineering & Innovation Network",
-    description:
-      "Connecting engineers, developers, and researchers building future-focused intelligent systems."
-  },
+  button.addEventListener("click", () => {
 
-  {
-    title: "Future of Learning Initiative",
-    description:
-      "Collaborative ecosystem for educators, innovators, and strategic thinkers transforming human learning."
-  },
+    document.querySelector("#collab")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
 
-  {
-    title: "Psychology & Cognitive Science Research",
-    description:
-      "Open collaborations for behavioral science, cognition, and human intelligence research."
-  },
+  });
 
-  {
-    title: "Innovation & Entrepreneurship Network",
-    description:
-      "Connecting founders, researchers, creators, and innovators building meaningful systems."
+});
+
+// IDEA BUTTONS
+
+const ideaButtons =
+document.querySelectorAll(".idea-btn");
+
+ideaButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    document.querySelector("#collab")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+
+  });
+
+});
+
+// COLLABORATION FORM
+
+const collabForm = document.getElementById("collab-form");
+const collabStatus = document.getElementById("collab-status");
+
+collabForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById("collab-submit");
+  const data = Object.fromEntries(new FormData(collabForm));
+  btn.disabled = true;
+  btn.textContent = "SENDING...";
+  collabStatus.textContent = "";
+  collabStatus.className = "collab-status";
+  try {
+    const res = await fetch("/api/collaborate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      collabStatus.textContent = "Request sent successfully. We'll be in touch.";
+      collabStatus.classList.add("status-ok");
+      collabForm.reset();
+    } else {
+      const err = await res.json().catch(() => ({}));
+      collabStatus.textContent = err.error || "Something went wrong. Please try again.";
+      collabStatus.classList.add("status-err");
+    }
+  } catch {
+    collabStatus.textContent = "Network error. Please try again.";
+    collabStatus.classList.add("status-err");
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "SEND REQUEST";
   }
+});
 
-];
+// COMMUNITY FEED
 
-// LOAD FEED
+const feedGrid = document.getElementById("feed-grid");
 
-const feedGrid =
-document.querySelector(".feed-grid");
-
-communityData.forEach((item) => {
-
+function renderPost(post) {
   const card = document.createElement("div");
-
   card.classList.add("feed-card");
-
+  const date = new Date(post.created_at || post.createdAt).toLocaleDateString("en-US", {
+    month: "short", day: "numeric", year: "numeric"
+  });
   card.innerHTML = `
-
-    <h4>${item.title}</h4>
-
-    <p>${item.description}</p>
-
+    <div class="feed-meta"><span class="feed-author">${escapeHtml(post.author)}</span><span class="feed-field">${escapeHtml(post.field)}</span><span class="feed-date">${date}</span></div>
+    <p>${escapeHtml(post.content)}</p>
   `;
+  return card;
+}
 
-  feedGrid.appendChild(card);
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
 
+async function loadFeed() {
+  try {
+    const res = await fetch("/api/feed");
+    const posts = await res.json();
+    feedGrid.innerHTML = "";
+    if (!posts.length) {
+      feedGrid.innerHTML = '<p class="feed-empty">No posts yet. Be the first to share an update.</p>';
+      return;
+    }
+    posts.forEach((post) => feedGrid.appendChild(renderPost(post)));
+  } catch {
+    feedGrid.innerHTML = '<p class="feed-empty">Could not load feed.</p>';
+  }
+}
+
+loadFeed();
+
+const feedForm = document.getElementById("feed-form");
+feedForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const btn = feedForm.querySelector("button");
+  const author = document.getElementById("feed-author").value.trim();
+  const field = document.getElementById("feed-field").value.trim();
+  const content = document.getElementById("feed-content").value.trim();
+  if (!author || !field || !content) return;
+  btn.disabled = true;
+  btn.textContent = "POSTING...";
+  try {
+    const res = await fetch("/api/feed", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ author, field, content }),
+    });
+    if (res.ok) {
+      feedForm.reset();
+      await loadFeed();
+    }
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "POST TO FEED";
+  }
 });
 
 // SCROLL REVEAL

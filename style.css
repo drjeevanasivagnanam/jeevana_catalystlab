@@ -288,6 +288,300 @@ button{
   line-height:1.8;
 }
 
+/* ── SECTION SUBTITLE ── */
+
+.section-sub{
+  color:#b8b8b8;
+  font-size:1.15rem;
+  line-height:1.8;
+  max-width:700px;
+  margin:0 auto 60px;
+  text-align:center;
+}
+
+/* ── CONNECTORS ── */
+
+.connectors{
+  text-align:center;
+}
+
+.connectors h3{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.connector-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:30px;
+  text-align:left;
+}
+
+.connector-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:40px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+}
+
+.connector-card:hover{
+  transform:translateY(-8px);
+  border-color:#4da3ff;
+  box-shadow:0 0 30px rgba(77,163,255,0.2);
+}
+
+.connector-icon{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  background:rgba(77,163,255,0.12);
+  color:#4da3ff;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  font-size:0.85rem;
+  letter-spacing:1.5px;
+  margin-bottom:22px;
+}
+
+.connector-card h4{
+  font-size:1.2rem;
+  margin-bottom:14px;
+}
+
+.connector-card p{
+  color:#b8b8b8;
+  line-height:1.8;
+  font-size:0.95rem;
+}
+
+.connector-btn{
+  margin-top:28px;
+  padding:12px 22px;
+  border-radius:10px;
+  border:1px solid #4da3ff;
+  background:transparent;
+  color:#4da3ff;
+  font-family:'Inter',sans-serif;
+  font-size:0.9rem;
+  transition:0.3s;
+}
+
+.connector-btn:hover{
+  background:#4da3ff;
+  color:#050505;
+}
+
+/* ── PROJECT IDEAS ── */
+
+.ideas{
+  text-align:center;
+}
+
+.ideas h3{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.ideas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  text-align:left;
+}
+
+.idea-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:40px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+  display:flex;
+  flex-direction:column;
+}
+
+.idea-card:hover{
+  transform:translateY(-8px);
+  border-color:#4da3ff;
+  box-shadow:0 0 30px rgba(77,163,255,0.2);
+}
+
+.idea-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.idea-tag{
+  padding:5px 14px;
+  border-radius:20px;
+  background:rgba(77,163,255,0.1);
+  border:1px solid rgba(77,163,255,0.25);
+  color:#4da3ff;
+  font-size:0.8rem;
+  letter-spacing:0.5px;
+}
+
+.idea-card h4{
+  font-size:1.2rem;
+  margin-bottom:14px;
+}
+
+.idea-card p{
+  color:#b8b8b8;
+  line-height:1.8;
+  font-size:0.95rem;
+  flex:1;
+}
+
+.idea-status{
+  margin-top:20px;
+  display:inline-block;
+  padding:5px 14px;
+  border-radius:20px;
+  background:rgba(100,220,120,0.1);
+  border:1px solid rgba(100,220,120,0.3);
+  color:#64dc78;
+  font-size:0.78rem;
+  letter-spacing:0.5px;
+  width:fit-content;
+}
+
+.idea-btn{
+  margin-top:22px;
+  padding:12px 22px;
+  border-radius:10px;
+  border:1px solid #4da3ff;
+  background:transparent;
+  color:#4da3ff;
+  font-family:'Inter',sans-serif;
+  font-size:0.9rem;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.idea-btn:hover{
+  background:#4da3ff;
+  color:#050505;
+}
+
+/* ── STUDENTS ── */
+
+.students{
+  text-align:center;
+}
+
+.students h3{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.students-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  text-align:left;
+}
+
+.student-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:35px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.student-card:hover{
+  transform:translateY(-8px);
+  border-color:#4da3ff;
+  box-shadow:0 0 30px rgba(77,163,255,0.2);
+}
+
+.student-avatar{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#1c3d5e,#4da3ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  font-size:1rem;
+  color:#fff;
+  letter-spacing:1px;
+  margin-bottom:20px;
+  flex-shrink:0;
+}
+
+.student-info{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  width:100%;
+}
+
+.student-info h4{
+  font-size:1.15rem;
+  margin-bottom:4px;
+}
+
+.student-field{
+  color:#4da3ff;
+  font-size:0.85rem;
+  letter-spacing:0.5px;
+  margin-bottom:16px;
+}
+
+.student-skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.student-skills span{
+  padding:4px 12px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);
+  font-size:0.78rem;
+  color:#d0d0d0;
+}
+
+.student-bio{
+  color:#b8b8b8;
+  line-height:1.8;
+  font-size:0.92rem;
+  flex:1;
+  margin-bottom:22px;
+}
+
+.student-btn{
+  display:inline-block;
+  padding:11px 28px;
+  border-radius:10px;
+  background:#4da3ff;
+  color:#050505;
+  text-decoration:none;
+  font-weight:700;
+  font-size:0.88rem;
+  transition:0.3s;
+  letter-spacing:0.5px;
+}
+
+.student-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 20px rgba(77,163,255,0.4);
+}
+
 .quote{
   text-align:center;
 }
@@ -333,6 +627,172 @@ footer p{
   right:-100px;
 }
 
+/* ── COLLAB FORM ── */
+
+.collab-form{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.collab-form input,
+.collab-form textarea{
+  width:100%;
+  padding:14px 18px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.05);
+  color:#f5f5f5;
+  font-family:'Inter',sans-serif;
+  font-size:0.95rem;
+  outline:none;
+  transition:0.3s;
+  resize:vertical;
+}
+
+.collab-form input::placeholder,
+.collab-form textarea::placeholder{
+  color:rgba(255,255,255,0.35);
+}
+
+.collab-form input:focus,
+.collab-form textarea:focus{
+  border-color:#4da3ff;
+  background:rgba(77,163,255,0.06);
+}
+
+.mail-btn{
+  cursor:pointer;
+  border:none;
+  font-family:'Inter',sans-serif;
+  font-size:0.95rem;
+  letter-spacing:1px;
+}
+
+.mail-btn:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+}
+
+.collab-status{
+  font-size:0.9rem;
+  min-height:1.2em;
+}
+
+.status-ok{ color:#4ade80; }
+.status-err{ color:#f87171; }
+
+/* ── FEED POST FORM ── */
+
+.feed-post-form{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  max-width:860px;
+  margin:0 auto 50px;
+  text-align:left;
+}
+
+.feed-post-form input{
+  flex:1;
+  min-width:180px;
+  padding:12px 16px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.05);
+  color:#f5f5f5;
+  font-family:'Inter',sans-serif;
+  font-size:0.9rem;
+  outline:none;
+  transition:0.3s;
+}
+
+.feed-post-form textarea{
+  width:100%;
+  padding:12px 16px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.05);
+  color:#f5f5f5;
+  font-family:'Inter',sans-serif;
+  font-size:0.9rem;
+  outline:none;
+  transition:0.3s;
+  resize:vertical;
+}
+
+.feed-post-form input::placeholder,
+.feed-post-form textarea::placeholder{
+  color:rgba(255,255,255,0.35);
+}
+
+.feed-post-form input:focus,
+.feed-post-form textarea:focus{
+  border-color:#4da3ff;
+  background:rgba(77,163,255,0.06);
+}
+
+.feed-post-btn{
+  padding:12px 26px;
+  border-radius:10px;
+  border:1px solid #4da3ff;
+  background:transparent;
+  color:#4da3ff;
+  font-family:'Inter',sans-serif;
+  font-size:0.9rem;
+  font-weight:600;
+  letter-spacing:0.5px;
+  cursor:pointer;
+  transition:0.3s;
+  align-self:flex-end;
+}
+
+.feed-post-btn:hover{
+  background:#4da3ff;
+  color:#050505;
+}
+
+.feed-post-btn:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+}
+
+.feed-meta{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.feed-author{
+  font-weight:600;
+  color:#f5f5f5;
+}
+
+.feed-field{
+  font-size:0.8rem;
+  padding:3px 10px;
+  border-radius:20px;
+  background:rgba(77,163,255,0.15);
+  color:#4da3ff;
+}
+
+.feed-date{
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.4);
+  margin-left:auto;
+}
+
+.feed-loading,
+.feed-empty{
+  color:rgba(255,255,255,0.4);
+  font-size:0.95rem;
+  grid-column:1/-1;
+  text-align:center;
+  padding:40px 0;
+}
+
 @media(max-width:900px){
 
   .collab{
@@ -363,6 +823,9 @@ footer p{
 
   .projects h3,
   .community h3,
+  .connectors h3,
+  .ideas h3,
+  .students h3,
   .collab h2,
   .quote h2,
   footer h2{
